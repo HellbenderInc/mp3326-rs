@@ -1,0 +1,20 @@
+[package]
+name = "mp3326"
+version = "0.2.1"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Driver for the MPS MP3326 led driver"
+keywords = ["embedded", "async", "led", "embedded-hal"]
+categories = ["embedded", "hardware-support", "no-std", "asynchronous"]
+repository = "https://github.com/HellbenderInc/mp3326-rs"
+
+[dependencies]
+defmt = { version = "1", optional = true }
+
+embedded-hal = { package = "embedded-hal", version = "=1.0.0" }
+embedded-hal-async = { version = "1.0.0" }
+modular-bitfield = "0.11.2"
+
+[features]
+default = ["defmt"]
+defmt = ["dep:defmt", "embedded-hal/defmt-03", "embedded-hal-async/defmt-03"]
